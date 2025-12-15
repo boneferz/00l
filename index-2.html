@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+	<title>00l HOME</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello, World!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: radial-gradient(circle at 15% 20%, rgba(94, 234, 212, 0.28), transparent 28%),
+             radial-gradient(circle at 80% 0%, rgba(129, 140, 248, 0.28), transparent 22%),
+             radial-gradient(circle at 50% 80%, rgba(248, 113, 113, 0.2), transparent 24%),
+             #0b1021;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.14);
+      --text: #e5e7eb;
+      --muted: rgba(229, 231, 235, 0.8);
+      --accent: linear-gradient(135deg, #a855f7, #60a5fa, #34d399);
+      --shadow: 0 18px 48px rgba(8, 47, 73, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      letter-spacing: -0.01em;
+      line-height: 1.6;
+    }
+
+    .shell {
+      width: min(560px, 100%);
+      padding: 32px;
+      border-radius: 24px;
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .shell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 30%),
+                  radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.06), transparent 30%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #c4d4ff;
+      font-weight: 600;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+    }
+
+    .title {
+      margin: 18px 0 10px;
+      font-size: clamp(2.2rem, 3vw + 1rem, 2.8rem);
+      color: #fff;
+    }
+
+    .lede {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      color: #0b1021;
+      background: var(--accent);
+      background-size: 180% 180%;
+      border: none;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 12px 32px rgba(88, 146, 255, 0.35);
+      transition: transform 150ms ease, box-shadow 150ms ease, background-position 200ms ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 38px rgba(88, 146, 255, 0.45);
+      background-position: 100% 50%;
+    }
+
+    .cta:focus-visible {
+      outline: 2px solid #a855f7;
+      outline-offset: 3px;
+    }
+
+    .ornament {
+      display: inline-flex;
+      gap: 4px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+	<h1>Hello World</h1>
+	<p>Yo! I am coming back</p>
+  <main class="shell" aria-labelledby="hello-title">
+    <div class="tag">
+      <span class="ornament" aria-hidden="true">✺ ✺</span>
+      Crafted greeting
+      <span class="ornament" aria-hidden="true">✺ ✺</span>
+    </div>
+    <h1 id="hello-title" class="title">Hello, World!</h1>
+    <p class="lede">
+      A calm little hello wrapped in soft color and gentle light. Stay as long as you like
+      and enjoy the view.
+    </p>
+    <a class="cta" href="#">Begin</a>
+  </main>
+</body>
+</html>
